@@ -12,7 +12,18 @@ def wallis(s):
     return(2*product)
 import math
 import unittest
-
+def monte_carlo(n):
+    import random
+    h=int(n)
+    Square=h
+    Circle=0
+    for i in range(Square):
+        x=random.random()
+        y=random.random()
+        if (x**2+y**2)<=1:
+            Circle=Circle+1
+    pi=4*(Circle/Square)
+    return(pi)
 class TestWallis(unittest.TestCase):
     def test_low_iters(self):
         for i in range(0, 5):
